@@ -64,7 +64,7 @@
 									</header>
 									<ul>
 										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
+										<li><a href="artwork.html">Artwork</a></li>
 										<li><a href="elements.html">Elements</a></li>
 										<li>
 											<span class="opener">Submenu</span>

@@ -29,6 +29,20 @@
 				window.setTimeout(function() {
 					$body.removeClass('is-preload');
 				}, 100);
+
+				// ✅ GSAP ScrollTrigger Integration for `emotions.jpg`
+				gsap.registerPlugin(ScrollTrigger);
+
+				gsap.to(".photo", {
+					opacity: 1,
+					y: 0,
+					duration: 1.5,
+					scrollTrigger: {
+						trigger: ".photo",
+						start: "top 80%", // Animation starts when .photo top reaches 80% of the viewport
+						toggleActions: "play none none none"
+					}
+				});
 			});
 
 		// ... stopped resizing.

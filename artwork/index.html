@@ -74,7 +74,7 @@
 						<h2>Digital Colour</h2>
 						<div class="artwork-gallery">
 							<div class="artwork-item">
-								<img src="images/emotions.jpg" alt="Emotion, Digital Colour, 2024" />
+								<img src="images/emotions.jpg" alt="Emotion, Digital Colour, 2024" class="highlight-emotion" />
 								<p>Emotion, Digital Colour, 2024</p>
 							</div>
 							<div class="artwork-item">
@@ -245,6 +245,23 @@
 			modal.addEventListener("click", (e) => {
 				if (e.target === modal) {
 					modal.style.display = "none";
+				}
+			});
+		</script>
+
+		<!-- GSAP ScrollTrigger animation for Emotion image -->
+		<script>
+			gsap.registerPlugin(ScrollTrigger);
+
+			gsap.from(".highlight-emotion", {
+				opacity: 0,
+				y: 50,
+				duration: 1.5,
+				ease: "power2.out",
+				scrollTrigger: {
+					trigger: ".highlight-emotion",
+					start: "top 80%",
+					toggleActions: "play none none none"
 				}
 			});
 		</script>

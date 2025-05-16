@@ -30,20 +30,22 @@
 					$body.removeClass('is-preload');
 				}, 100);
 
-				// ✅ GSAP ScrollTrigger Integration for `emotions.jpg`
+				// GSAP ScrollTrigger Integration
 				gsap.registerPlugin(ScrollTrigger);
 
-				gsap.to(".photo", {
-					opacity: 1,
-					y: 0,
-					duration: 1.5,
-					scrollTrigger: {
-						trigger: ".photo",
-						start: "top 80%", // Animation starts when .photo top reaches 80% of the viewport
-						toggleActions: "play none none none"
-					}
+				gsap.utils.toArray("img").slice(0, 6).forEach(img => {
+					gsap.from(img, {
+						opacity: 0,
+						y: 50,
+						duration: 1.5,
+						ease: "power2.out",
+						scrollTrigger: {
+							trigger: img,
+							start: "top 80%",
+							toggleActions: "play none none none"
+						}
+					});
 				});
-			});
 
 		// ... stopped resizing.
 			var resizeTimeout;
